@@ -3,6 +3,7 @@ package com.example.appagenda;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,5 +20,7 @@ public class About_US extends AppCompatActivity {
                 finish();
             }
         });
+        TextView descripcion = findViewById(R.id.textView3);
+        descripcion.setText("Esta es una aplicación \n");
     }
 }
