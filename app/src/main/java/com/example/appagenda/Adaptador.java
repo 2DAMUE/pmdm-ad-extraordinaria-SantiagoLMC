@@ -35,6 +35,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
             super(v);
             nombTarea = v.findViewById(R.id.nombTarea);
             hecho = v.findViewById(R.id.hecho);
+            this.onClickCustom = onClickCustom;
             this.adapter = adapter;
             hecho.setOnClickListener(this);
             v.setOnClickListener(this);

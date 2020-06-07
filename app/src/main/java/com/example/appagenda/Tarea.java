@@ -1,6 +1,8 @@
 package com.example.appagenda;
 
-public class Tarea {
+import java.io.Serializable;
+
+public class Tarea implements Serializable {
     private String tarea;
     private String descripcion;
     private boolean hecho;

@@ -74,7 +74,9 @@ public class ViewActivity extends AppCompatActivity implements Adaptador.OnClick
     @Override
     public void click(int position) {
         Tarea t = listaTareas.get(position);
-        mostrarToast(t.getTarea());
+        Intent lanzar = new Intent(this, Descripcion.class);
+        lanzar.putExtra("Tarea", t);
+        startActivity(lanzar);
         Log.d("Nombre Tarea: ", t.getTarea());
     }
 }

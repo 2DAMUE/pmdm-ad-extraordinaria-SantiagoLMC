@@ -94,7 +94,7 @@ public class BDSQLite {
      * @return
      */
     public boolean update(Tarea tarea) {
-        try (SQLiteStatement stm = bbdd.compileStatement("UPDATE " + TABLE_NAME + " SET nombre = ?, " +
+        try (SQLiteStatement stm = bbdd.compileStatement("UPDATE " + TABLE_NAME + " SET nombreTarea = ?, " +
                 "descripcion = ?, hecho = ? WHERE nombre = ?");) {
 
             stm.bindString(1, tarea.getTarea());
@@ -113,13 +113,15 @@ public class BDSQLite {
     }
 
     public boolean delete(Tarea tarea) {
-        try (SQLiteStatement stm = bbdd.compileStatement("DELETE FROM " + TABLE_NAME + " WHERE nombre = ?")) {
+        try (SQLiteStatement stm = bbdd.compileStatement("DELETE FROM " + TABLE_NAME + " WHERE nombreTarea = ?")) {
 
             stm.bindString(1, tarea.getTarea());
             stm.execute();
+            Log.d("DELETE", "Exit");
             return true;
         } catch (SQLiteException e) {
             e.printStackTrace();
+            Log.w("DELETE", e.getMessage());
             return false;
         }
     }
