@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppAgenda</string>
+    <string name="btnCancelar">Delete</string>
+    <string name="btnGuardar">Save</string>
+    <string name="edtDescripcion">Description</string>
+    <string name="edtNombreTarea">Task name</string>
+    <string name="cbe">Spanish</string>
+    <string name="cbi">English</string>
+    <string name="item1">Language</string>
+    <string name="saveAndBack">Save and back</string>
+    <string name="tv1">Languages</string>
+</resources>

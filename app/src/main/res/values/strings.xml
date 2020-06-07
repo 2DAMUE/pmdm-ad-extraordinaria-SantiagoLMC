@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppAgenda</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="btnCancelar">Cancelar</string>
+    <string name="edtNombreTarea">Nombre de la tarea</string>
+    <string name="edtDescripcion">Descripción</string>
+    <string name="item1">Idioma</string>
+    <string name="saveAndBack">Guardar y Volver</string>
+    <string name="tv1">Idiomas</string>
+    <string name="cbi">Inglés</string>
+    <string name="cbe">Español</string>
+
+</resources>
