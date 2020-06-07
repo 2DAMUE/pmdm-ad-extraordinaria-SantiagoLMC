@@ -1,28 +1,18 @@
 package com.example.appagenda;
 
-
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.List;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
-
     private OnClickCustom onClickCustom;
-    private BDSQLite bdsqLite;
-    private FloatingActionButton done;
-    private EditText tarea;
-    private EditText desc;
+    private Context cont;
     private List<Tarea> tareasList;
 
     /**
@@ -37,45 +27,31 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
 
         private TextView nombTarea;
         private Button hecho;
-
         private OnClickCustom onClickCustom;
+        private Adaptador adapter;
 
-        public MyHolder(@NonNull View v, OnClickCustom onClickCustom) {
+        public MyHolder(@NonNull View v, OnClickCustom onClickCustom, Adaptador adapter) {
             //Llamo al constructor del padre
             super(v);
             nombTarea = v.findViewById(R.id.nombTarea);
             hecho = v.findViewById(R.id.hecho);
-            hecho.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    delete();
-                }
-            });
+            this.adapter = adapter;
+            hecho.setOnClickListener(this);
+            v.setOnClickListener(this);
         }
 
-        public void delete() {
-            BDSQLite bdsqLite = new BDSQLite();
-            String name = tarea.getText().toString();
-            String descrip = desc.getText().toString();
-            boolean tf = false;
-            Tarea t1 = new Tarea(name, descrip, tf);
-            boolean exito = bdsqLite.delete(t1);
-            if (exito) {
-                Toast.makeText(this, "Se ha borrado", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(this, "No se ha borrado", Toast.LENGTH_SHORT).show();
-            }
-            boolean exito = bdsqLite.delete(t1);
-            tareasList.remove(position);
-
-        }
 
         @Override
         public void onClick(View v) {
-            //Le paso a la interfaz la posición actual de cada tarjeta. No se implementa el método aquí.
-            onClickCustom.click(getAdapterPosition());
-
+            switch (v.getId()) {
+                case R.id.hecho:
+                    adapter.delete(getAdapterPosition());
+                    break;
+                default:
+                    //Le paso a la interfaz la posición actual de cada tarjeta. No se implementa el método aquí.
+                    onClickCustom.click(getAdapterPosition());
+                    break;
+            }
         }
     }
 
@@ -86,11 +62,20 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
      * @param tareasList lista de hospitales
      * @see Tarea
      */
-    public Adaptador(List<Tarea> tareasList, OnClickCustom onClickCustom) {
+    public Adaptador(List<Tarea> tareasList, OnClickCustom onClickCustom, Context cont) {
         this.tareasList = tareasList;
+        this.cont = cont;
         this.onClickCustom = onClickCustom;
     }
 
+    public void delete(int indice) {
+        BDSQLite bdsqLite = new BDSQLite(cont);
+        Tarea tarea1 = tareasList.get(indice);
+        bdsqLite.delete(tarea1);
+        this.tareasList.remove(indice);
+        notifyItemRemoved(indice);
+        notifyItemRangeChanged(indice, this.tareasList.size());
+    }
 
     @NonNull
     @Override
@@ -105,7 +90,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
          * @see Adaptdor.OnClickCustom
          * @see Adaptdor#onClickCustom
          */
-        return new MyHolder(v, onClickCustom);
+        return new MyHolder(v, onClickCustom, this);
     }
 
     /**
@@ -139,7 +124,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
      * Interfaz personalizada que contiene los métodos a implementar en el
      * activity que contiene el RecyclerView
      *
-     * @see ActivityRecycler
+     * @see
      */
     public interface OnClickCustom {
 
@@ -147,8 +132,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyHolder> {
          * Método que se implementa en el activity que contiene el RecyclerView
          *
          * @param position posición en del elemento seleccionado
-         * @see Adaptdor#onClickCustom
-         * @see ActivityRecycler#click(int)
+         * @see
+         * @see
          */
         void click(int position);
     }

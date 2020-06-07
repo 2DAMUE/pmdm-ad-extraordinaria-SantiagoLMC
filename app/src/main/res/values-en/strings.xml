@@ -10,4 +10,6 @@
     <string name="item1">Language</string>
     <string name="saveAndBack">Save and back</string>
     <string name="tv1">Languages</string>
+    <string name="btnBack">Back</string>
+    <string name="btnAbUs">About Us</string>
 </resources>

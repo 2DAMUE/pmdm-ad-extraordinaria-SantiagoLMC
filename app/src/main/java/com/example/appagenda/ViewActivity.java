@@ -50,7 +50,7 @@ public class ViewActivity extends AppCompatActivity implements Adaptador.OnClick
         listaTareas = bdsqLite.getTareas();
 
         //Creo el adaptador y hago un set del adaptador en el RecyclerView
-        adapter = new Adaptador(listaTareas, this);
+        adapter = new Adaptador(listaTareas, this, this);
         recyclerView.setAdapter(adapter);
         aDD = findViewById(R.id.fab);
         aDD.setOnClickListener(new View.OnClickListener() {

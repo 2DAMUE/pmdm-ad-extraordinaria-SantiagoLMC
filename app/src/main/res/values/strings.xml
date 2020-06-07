@@ -9,5 +9,6 @@
     <string name="tv1">Idiomas</string>
     <string name="cbi">Inglés</string>
     <string name="cbe">Español</string>
-
+    <string name="btnBack">Volver</string>
+    <string name="btnAbUs">Sobre nosotros</string>
 </resources>
