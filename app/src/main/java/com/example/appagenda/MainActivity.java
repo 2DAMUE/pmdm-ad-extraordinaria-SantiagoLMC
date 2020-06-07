@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements CalendarView.OnDa
     }
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.item1){
+        if(id == R.id.itemIdioma){
             Toast.makeText(this, "Opcion1", Toast.LENGTH_SHORT).show();
         }return super.onOptionsItemSelected(item);
     }

@@ -1,5 +1,6 @@
 package com.example.appagenda;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +9,8 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,6 +35,33 @@ public class ViewActivity extends AppCompatActivity implements Adaptador.OnClick
         setContentView(R.layout.activity_view);
         bdsqLite = new BDSQLite(this);
         cargarVista();
+    }
+
+    /**
+     * Para que se muestre el menu
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.itemIdioma:
+                Intent lanzar = new Intent(this, Language.class);
+                startActivity(lanzar);
+                break;
+            case R.id.itemAU:
+                Intent enviar = new Intent(this, About_US.class);
+                startActivity(enviar);
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     /**

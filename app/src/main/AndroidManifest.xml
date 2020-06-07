@@ -17,6 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Language"/>
+        <activity android:name=".About_US" />
         <activity android:name=".AddActivity" />
         <activity android:name=".MainActivity" />
     </application>
