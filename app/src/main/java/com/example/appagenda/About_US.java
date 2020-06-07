@@ -21,6 +21,8 @@ public class About_US extends AppCompatActivity {
             }
         });
         TextView descripcion = findViewById(R.id.textView3);
-        descripcion.setText("Esta es una aplicación \n");
+        descripcion.setText("Esta es una aplicación creada con el objetivo\n" +
+                "de hacer que el usuario pueda llevar sus\n" +
+                "trabajos de manera ordenada.");
     }
 }

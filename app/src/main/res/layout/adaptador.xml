@@ -20,9 +20,9 @@
 
     <Button
         android:id="@+id/hecho"
-        android:layout_width="166dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="192dp"
+        android:layout_width="112dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="148dp"
 
         android:text="Hecho"
         app:layout_constraintBottom_toBottomOf="parent"
