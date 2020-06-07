@@ -12,4 +12,6 @@
     <string name="tv1">Languages</string>
     <string name="btnBack">Back</string>
     <string name="btnAbUs">About Us</string>
+    <string name="hecho">Done</string>
+    <string name="btnBack2">Back</string>
 </resources>

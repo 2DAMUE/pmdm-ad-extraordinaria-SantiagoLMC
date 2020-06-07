@@ -14,18 +14,25 @@
 
 
 
+
+
+
+
+
+
+
+
     ]]>
 
     <TextView
         android:id="@+id/txtlang"
-        android:layout_width="59dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="260dp"
+        android:layout_width="82dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="48dp"
         android:text="@string/tv1"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="129dp" />
 
     <CheckBox
         android:id="@+id/checkBoxEsp"
@@ -35,30 +42,29 @@
         android:text="@string/cbe"
         app:layout_constraintStart_toEndOf="@+id/checkBoxEng"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="56dp" />
-
-    <Button
-        android:id="@+id/saveAndBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="152dp"
-        android:onClick="GuardarYVolver"
-        android:text="@string/saveAndBack"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxEng"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="104dp" />
 
     <CheckBox
         android:id="@+id/checkBoxEng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:text="@string/cbi"
-        app:layout_constraintStart_toEndOf="@+id/txtlang"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="56dp" />
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <Button
+        android:id="@+id/saveAndBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="152dp"
+        android:onClick="GuardarYVolver"
+        android:text="@string/saveAndBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxEng"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

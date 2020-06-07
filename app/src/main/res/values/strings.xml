@@ -11,4 +11,6 @@
     <string name="cbe">Español</string>
     <string name="btnBack">Volver</string>
     <string name="btnAbUs">Sobre nosotros</string>
+    <string name="hecho">Hecho</string>
+    <string name="btnBack2">Volver</string>
 </resources>
