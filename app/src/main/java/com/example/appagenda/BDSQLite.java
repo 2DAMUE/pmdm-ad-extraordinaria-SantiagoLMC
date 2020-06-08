@@ -25,34 +25,34 @@ public class BDSQLite {
             "nombreTarea varchar(40)," +
             "descripcion varchar(60)," +
             "hecho varchar, CONSTRAINT restriccion PRIMARY KEY (nombreTarea))";
-    /**La PK será el nombre de la tarea y se filtrará por nombre
-     *
+    /**
+     * La PK será el nombre de la tarea y se filtrará por nombre
      */
 
-
-    /** private static final String CREAR_BBDD = "CREATE TABLE " + TABLE_NAME + "(tarea TEXT, descripcion TEXT, hecho TEXT, CONSTRAINT " +
-     "tarea_pk PRIMARY KEY (tarea))";
-     **/
     /**
      * Nombre de la base de datos
      */
-
     private static final String BBDD_NAME = "lista";
     /**
-     *
+     * Sirve oara inicializar el SQLite Open Helper
      */
     private Context context;
-
+    /**
+     * Interactua con la BBDD
+     */
     private SQLiteDatabase bbdd;
-
+    /**
+     * Crea la BBDD obteniendo el SQLite Data Base
+     */
     private SQLiteOpenHelper helper;
 
     /**
+     * Constructor.
+     * Inicializo la conexión a la BBDD
      * @param context
      */
     public BDSQLite(Context context) {
         this.context = context;
-
         helper = new SQLiteOpenHelper(context, BBDD_NAME, null, 1) {
             @Override
             public void onCreate(SQLiteDatabase db) {
@@ -69,6 +69,10 @@ public class BDSQLite {
     }
 
     /**
+     * Inserta los datos
+     * blindString (se le pasa el indice y el valor que tendrá, Nombre,
+     * Descripción y condicional true o false)
+     *
      * @param tarea
      * @return
      */
@@ -90,27 +94,10 @@ public class BDSQLite {
     }
 
     /**
+     * Elimina las tareas
      * @param tarea
      * @return
      */
-    public boolean update(Tarea tarea) {
-        try (SQLiteStatement stm = bbdd.compileStatement("UPDATE " + TABLE_NAME + " SET nombreTarea = ?, " +
-                "descripcion = ?, hecho = ? WHERE nombre = ?");) {
-
-            stm.bindString(1, tarea.getTarea());
-            stm.bindString(2, tarea.getDescripcion());
-            if (tarea.isHecho())
-                stm.bindString(3, "true");
-            else
-                stm.bindString(3, "false");
-            stm.bindString(4, tarea.getTarea());
-            stm.execute();
-            return true;
-        } catch (SQLiteException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
 
     public boolean delete(Tarea tarea) {
         try (SQLiteStatement stm = bbdd.compileStatement("DELETE FROM " + TABLE_NAME + " WHERE nombreTarea = ?")) {
@@ -126,11 +113,21 @@ public class BDSQLite {
         }
     }
 
+    /**
+     * Recoge todas las tareas que haya y las deposita en el Recycler View.
+     *
+     * @return
+     */
     public List<Tarea> getTareas() {
         List<Tarea> tareas = new ArrayList<>();
 
         String sql = "SELECT * FROM " + TABLE_NAME;
         Cursor cur = bbdd.rawQuery(sql, null);
+        /**
+         * Recorre un "Array" y recoge los datos de las celdas.
+         * Se le indican las columnas mientras que las filas las recorre por sí solo.
+         * El Boolean convierte el String a boolean.
+         */
         while (cur.moveToNext()) {
             tareas.add(new Tarea(cur.getString(0), cur.getString(1),
                     Boolean.parseBoolean(cur.getString(2))));

@@ -9,7 +9,7 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".ViewActivity">
+    tools:context=".Lista_de_Tareas">
 
     <CalendarView
         android:id="@+id/calendarView"

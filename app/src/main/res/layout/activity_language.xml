@@ -22,49 +22,66 @@
 
 
 
+
+
+
+
+
+
     ]]>
 
     <TextView
         android:id="@+id/txtlang"
         android:layout_width="82dp"
         android:layout_height="34dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="64dp"
         android:text="@string/tv1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="129dp" />
+        tools:ignore="MissingConstraints" />
 
     <CheckBox
         android:id="@+id/checkBoxEsp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
         android:text="@string/cbe"
+        app:layout_constraintBottom_toTopOf="@+id/saveAndBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/checkBoxEng"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintTop_toBottomOf="@+id/txtlang"
+        app:layout_constraintVertical_bias="0.374"
+        tools:ignore="MissingConstraints" />
 
     <CheckBox
         android:id="@+id/checkBoxEng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="@string/cbi"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintBottom_toTopOf="@+id/saveAndBack"
+        app:layout_constraintEnd_toStartOf="@+id/checkBoxEsp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlang"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/saveAndBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginTop="88dp"
         android:onClick="GuardarYVolver"
         android:text="@string/saveAndBack"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxEng"
+        app:layout_constraintVertical_bias="0.129"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

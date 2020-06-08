@@ -6,6 +6,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Regresa a la actividad anterior
+ */
 public class Language extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {

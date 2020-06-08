@@ -9,6 +9,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class About_US extends AppCompatActivity {
+    /**
+     * Movimiento de actividades
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,9 @@ public class About_US extends AppCompatActivity {
                 finish();
             }
         });
+        /**
+         * Descripción
+         */
         TextView descripcion = findViewById(R.id.textView3);
         descripcion.setText("Esta es una aplicación creada con el objetivo\n" +
                 "de hacer que el usuario pueda llevar sus\n" +

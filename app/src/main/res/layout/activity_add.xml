@@ -11,42 +11,40 @@
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="116dp"
-        android:text="Añadir"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.855" />
+
+    <EditText
+        android:id="@+id/txtDesc"
+        android:layout_width="183dp"
+        android:layout_height="198dp"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/edtDescripcion"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.399"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNameTarea"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/txtNameTarea"
         android:layout_width="220dp"
         android:layout_height="57dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
+        android:hint="@string/edtNombreTarea"
         android:inputType="textPersonName"
-        android:hint="Nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtDesc"
-        android:layout_width="226dp"
-        android:layout_height="201dp"
-        android:layout_marginTop="76dp"
-        android:ems="10"
-        android:hint="Descripción"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNameTarea"
-        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

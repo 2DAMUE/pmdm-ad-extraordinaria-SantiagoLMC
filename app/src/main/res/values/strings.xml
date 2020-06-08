@@ -13,4 +13,8 @@
     <string name="btnAbUs">Sobre nosotros</string>
     <string name="hecho">Hecho</string>
     <string name="btnBack2">Volver</string>
+    <string name="add">Añadir</string>
+    <string name="txtNameTarea">Tarea</string>
+    <string name="txtDesc">Descripción</string>
+
 </resources>

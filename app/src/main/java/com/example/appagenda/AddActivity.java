@@ -2,28 +2,29 @@ package com.example.appagenda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Añade las tareas y sus descripciones.
+ */
 public class AddActivity extends AppCompatActivity implements View.OnClickListener {
+    /**
+     * BDSQLite conecta con la BBDD
+     */
     private BDSQLite bdsqLite;
     private Button aniadir;
     private EditText tarea;
     private EditText desc;
 
-
+    /**
+     * Inicializo las variables
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,11 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         desc = findViewById(R.id.txtDesc);
     }
 
+    /**
+     * Se usa el switch para filtrar las elecciones en pantalla y hacer
+     * que al pulsar dicha opción se cree la tarea.
+     * @param view
+     */
     @Override
     public void onClick(View view) {
 
@@ -46,7 +52,13 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     /**
-     *
+     * "bdsqLite" Conecta con la base de datos
+     * Se declara el nombre y la descripción
+     * Se crea una booleana para decir si la tarea está hecha o no
+     * Luego se indica si el insert, al guardar, se ha llevado a cabo,
+     * en caso contrario dirá que no se ha guardado.
+     * Una vez hecho lo anterior, el Intent (independientemente de la condición),
+     * volverá a la actividad de View Activity
      */
     public void create() {
         bdsqLite = new BDSQLite(this);
@@ -60,7 +72,7 @@ public class AddActivity extends AppCompatActivity implements View.OnClickListen
         } else {
             Toast.makeText(this, "No se ha guardado", Toast.LENGTH_SHORT).show();
         }
-        Intent change = new Intent(this, ViewActivity.class);
+        Intent change = new Intent(this, Lista_de_Tareas.class);
         finish();
         startActivity(change);
     }

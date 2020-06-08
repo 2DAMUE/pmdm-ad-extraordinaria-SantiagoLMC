@@ -8,7 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Descripcion extends AppCompatActivity {
-
+    /**
+     * Recoge el objeto con el nombre, en clave, "Tarea"
+     * L 24 Se le añade la descripción al Text View de la L 22
+     * Vuelve a la actividad anterior.
+     * @param savedInstanceState
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

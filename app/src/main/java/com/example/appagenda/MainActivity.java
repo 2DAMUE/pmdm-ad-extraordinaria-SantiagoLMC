@@ -3,7 +3,6 @@ package com.example.appagenda;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CalendarView;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements CalendarView.OnDateChangeListener {
@@ -50,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements CalendarView.OnDa
 
                     } else if (i == 1) {
                         //var events
-                        Intent intent = new Intent(getApplication(), ViewActivity.class);
+                        Intent intent = new Intent(getApplication(), Lista_de_Tareas.class);
                         Bundle bundle = new Bundle();
 
                         intent.putExtras(bundle);

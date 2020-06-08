@@ -14,4 +14,7 @@
     <string name="btnAbUs">About Us</string>
     <string name="hecho">Done</string>
     <string name="btnBack2">Back</string>
+    <string name="add">ADD</string>
+    <string name="txtNameTarea">Task</string>
+    <string name="txtDesc">Description</string>
 </resources>

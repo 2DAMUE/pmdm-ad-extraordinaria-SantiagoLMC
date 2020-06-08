@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Descripcion"></activity>
-        <activity android:name=".ViewActivity">
+        <activity android:name=".Lista_de_Tareas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
